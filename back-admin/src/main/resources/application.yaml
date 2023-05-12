@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/basketballpark?useSSL=false&characterEncoding=utf-8
+    username: root
+    password: 123456
+
+mybatis-plus:
+  global-config:
+    banner: false
+  configuration:
+    auto-mapping-behavior: full
+    aggressive-lazy-loading: false
+    use-actual-param-name: true
+    lazy-loading-enabled: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl   #打印sql
+  type-aliases-package: com.ahao.admin.pojo
+  mapper-locations: classpath*:/com/ahao/mappers/*.xml
+
+logging:
+  config:
+  level:
+    com:
+      ahao:
+        admin: info
+        mapper: debug
+  pattern:
+    dateformat: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+    console: '%d{yyyy-MMM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n'
+
+
+
