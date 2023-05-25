@@ -30,5 +30,11 @@ public class UploadPictureController {
         return null;
     }
 
+    @PostMapping("newsPic")
+    public R newsPic (MultipartFile file) throws IOException {
+        file.transferTo(new File("D:/interllij idea/4+/basSystem/bas-front/src/assets/news/"+file.getOriginalFilename()));
+        return null;
+    }
+
 
 }
